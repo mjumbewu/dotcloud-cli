@@ -8,10 +8,10 @@ CLIENT_SECRET = '2fa7e44a09e3c9b7d63de7ffb97112'
 
 
 class GlobalConfig(object):
-    def __init__(self):
+    def __init__(self, config_filename='config', key_filename='dotcloud.key'):
         self.dir = os.path.expanduser('~/.dotcloud_cli')
-        self.path = self.path_to('config')
-        self.key = self.path_to('dotcloud.key')
+        self.path = self.path_to(config_filename)
+        self.key = self.path_to(key_filename)
         self.load()
 
     def path_to(self, name):
